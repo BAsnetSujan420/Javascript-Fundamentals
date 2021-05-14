@@ -22,17 +22,13 @@
     <script>
       const body = document.body;
       const div = document.createElement("div");
-      const strong = document.createElement("strong");
-      div.append(strong);
-      strong.innerText = " Hello World ";
-      body.append(div);
 
       const spanHi = document.querySelector("#hi");
       const spanBye = document.querySelector("#bye");
 
-      spanHi.remove();
-      spanBye.remove();
-      div.append(spanBye);
+      spanHi.setAttribute("title", "hello");
+
+      console.log(spanHi.id);
     </script>
   </body>
 </html>

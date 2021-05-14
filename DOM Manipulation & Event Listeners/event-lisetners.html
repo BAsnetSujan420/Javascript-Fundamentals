@@ -50,12 +50,24 @@
       const parent = document.querySelector(".parent");
       const child = document.querySelector(".child");
 
+      /* 
+      * Event Bubbling - event of child element bubble up towards parent elements
+      technically parent elements are also clicked when child element is clicked as child is nested in parent
+      */
       grandparent.addEventListener("click", (e) => {
         console.log("Grandparent 1");
       });
 
-      grandparent.addEventListener("click", (e) => {
-        console.log("Grandparent 2");
+      parent.addEventListener("click", (e) => {
+        console.log("Parent 1");
+      });
+
+      child.addEventListener("click", (e) => {
+        console.log("Child 1");
+      });
+
+      document.addEventListener("click", (e) => {
+        console.log("Document 1");
       });
     </script>
   </body>

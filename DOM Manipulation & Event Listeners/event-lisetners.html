@@ -46,32 +46,25 @@
     </div>
 
     <script>
-      const grandparent = document.querySelector(".grandparent");
-      const parent = document.querySelector(".parent");
-      const child = document.querySelector(".child");
+      //   document.addEventListener("click", (e) => {
+      //     if (e.target.matches("div")) {
+      //       console.log("Hi");
+      //     }
+      //   });
 
-      /*
-      * Event Bubbling - event of child element bubble up towards parent elements
-      technically parent elements are also clicked when child element is clicked as child is nested in parent
-      */
+      addGlobalEventListener("click", "div", (e) => console.log("hi"));
 
-      grandparent.addEventListener("click", (e) => {
-        console.log("Grandparent 1");
-      });
-
-      parent.addEventListener("click", printHi);
-
-      setTimeout(() => {
-        parent.removeEventListener("click", printHi);
-      }, 3000);
-
-      child.addEventListener("click", (e) => {
-        console.log("Child 1");
-      });
-
-      function printHi() {
-        console.log("Hi");
+      function addGlobalEventListener(type, selector, callback) {
+        document.addEventListener(type, (e) => {
+          if (e.target.matches(selector)) callback(e);
+        });
       }
+
+      const newDiv = document.createElement("div");
+      newDiv.style.width = "360px";
+      newDiv.style.height = "360px";
+      newDiv.style.backgroundColor = "purple";
+      document.body.append(newDiv);
     </script>
   </body>
 </html>

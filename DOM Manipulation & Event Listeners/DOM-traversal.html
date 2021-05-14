@@ -47,9 +47,10 @@
 
     <script>
       const childOne = document.querySelector("#child-three");
-      const parent = childOne.parentElement;
+      //   const parent = childOne.parentElement;
+      const grandparent = childOne.closest(".grandparent");
 
-      changeColor(parent);
+      changeColor(grandparent);
 
       function changeColor(element) {
         element.style.backgroundColor = "#333";

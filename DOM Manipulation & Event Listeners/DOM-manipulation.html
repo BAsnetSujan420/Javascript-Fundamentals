@@ -15,7 +15,11 @@
   </head>
   <body>
     <div>
-      <span id="hi" data-test="This is a test" data-longer-name="hahahahahahha"
+      <span
+        id="hi"
+        class="hi hi2"
+        data-test="This is a test"
+        data-longer-name="hahahahahahha"
         >Hello</span
       >
       <span id="bye">Bye</span>
@@ -32,6 +36,9 @@
 
       console.log(spanHi.dataset.longerName);
       spanHi.dataset.newName = "hi";
+
+      spanHi.classList.add("hi3");
+      spanHi.classList.toggle("hi2", true);
     </script>
   </body>
 </html>

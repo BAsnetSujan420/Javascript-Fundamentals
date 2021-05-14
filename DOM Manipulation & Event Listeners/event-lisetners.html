@@ -54,9 +54,13 @@
       * Event Bubbling - event of child element bubble up towards parent elements
       technically parent elements are also clicked when child element is clicked as child is nested in parent
       */
-      grandparent.addEventListener("click", (e) => {
-        console.log("Grandparent 1");
-      });
+      grandparent.addEventListener(
+        "click",
+        (e) => {
+          console.log("Grandparent Capture");
+        },
+        (capture = true)
+      );
 
       parent.addEventListener("click", (e) => {
         console.log("Parent 1");

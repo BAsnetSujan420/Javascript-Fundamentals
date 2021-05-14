@@ -15,7 +15,9 @@
   </head>
   <body>
     <div>
-      <span id="hi">Hello</span>
+      <span id="hi" data-test="This is a test" data-longer-name="hahahahahahha"
+        >Hello</span
+      >
       <span id="bye">Bye</span>
     </div>
 
@@ -28,7 +30,8 @@
 
       spanHi.setAttribute("title", "hello");
 
-      console.log(spanHi.id);
+      console.log(spanHi.dataset.longerName);
+      spanHi.dataset.newName = "hi";
     </script>
   </body>
 </html>

@@ -47,8 +47,9 @@
 
     <script>
       const grandparent = document.getElementById("grandparent");
+      const parents = Array.from(document.getElementsByClassName("parent"));
 
-      changeColor(grandparent);
+      parents.forEach(changeColor);
 
       function changeColor(element) {
         element.style.backgroundColor = "#333";

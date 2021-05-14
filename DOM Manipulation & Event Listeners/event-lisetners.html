@@ -62,6 +62,19 @@
         (capture = true)
       );
 
+      grandparent.addEventListener("click", (e) => {
+        console.log("Grandparent 1");
+      });
+
+      parent.addEventListener(
+        "click",
+        (e) => {
+          e.stopPropagation();
+          console.log("Parent Capture");
+        },
+        (capture = true)
+      );
+
       parent.addEventListener("click", (e) => {
         console.log("Parent 1");
       });

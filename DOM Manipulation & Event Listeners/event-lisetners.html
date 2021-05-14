@@ -59,17 +59,19 @@
         console.log("Grandparent 1");
       });
 
-      parent.addEventListener(
-        "click",
-        (e) => {
-          console.log("Parent 1");
-        },
-        { once: true }
-      );
+      parent.addEventListener("click", printHi);
+
+      setTimeout(() => {
+        parent.removeEventListener("click", printHi);
+      }, 3000);
 
       child.addEventListener("click", (e) => {
         console.log("Child 1");
       });
+
+      function printHi() {
+        console.log("Hi");
+      }
     </script>
   </body>
 </html>

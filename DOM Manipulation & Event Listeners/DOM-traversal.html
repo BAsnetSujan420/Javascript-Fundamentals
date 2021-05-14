@@ -40,18 +40,16 @@
         <div class="child"></div>
       </div>
       <div class="parent">
-        <div class="child"></div>
+        <div class="child" id="child-three"></div>
         <div class="child"></div>
       </div>
     </div>
 
     <script>
-      const grandparent = document.querySelector(".grandparent");
+      const childOne = document.querySelector("#child-three");
+      const parent = childOne.parentElement;
 
-      const children = grandparent.querySelectorAll(".child");
-
-      children.forEach(changeColor);
-      //   changeColor(children[0]);
+      changeColor(parent);
 
       function changeColor(element) {
         element.style.backgroundColor = "#333";

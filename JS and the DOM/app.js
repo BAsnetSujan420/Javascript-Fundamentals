@@ -24,3 +24,10 @@ mainHeading.insertAdjacentHTML('beforeend', htmlTextToAdd);
 
 //if an element already exists in the DOM and this element is passed to .appendChild(), the .appendChild() method will move it rather than duplicating it
 //the .insertAdjacentHTML() method's second argument has to be text, you can't pass an element
+
+
+//Removing Content from Parent element
+const cardContainer = document.querySelector('.hero__module');
+const firstChild = cardContainer.firstElementChild;
+//cardContainer.removeChild(firstChild);
+firstChild.remove();

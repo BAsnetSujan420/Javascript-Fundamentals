@@ -58,12 +58,20 @@ communityHeading.classList.toggle("text-center");
 function increaseTextSize(){
     this.style.fontSize = "2em";
 }
-mainHeading.addEventListener('mouseenter', increaseTextSize);
+mainHeading.addEventListener('mouseenter', increaseTextSize, true);
 
-mainHeading.removeEventListener('mouseleave', increaseTextSize);
+mainHeading.removeEventListener('mouseleave', increaseTextSize, true);
 
-document.body.addEventListener('keypress', function(){
+document.body.addEventListener('keypress', function(event){
     console.log("removing first child");
+    event.preventDefault();
+    console.log(event.key);
  document.querySelector("#contain-all").firstElementChild.remove();
 });
+
+
+// Phases of Events
+
+//By default, when .addEventListener() is called with only two arguments, the method defaults to using the bubbling phase.
+
 

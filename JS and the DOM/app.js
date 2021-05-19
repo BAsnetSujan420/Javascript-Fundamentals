@@ -50,3 +50,20 @@ document.querySelector('#heading-sibling').style.backgroundColor = 'lightblue';
 communityHeading.classList.remove("text-center");
 
 communityHeading.classList.toggle("text-center");
+
+
+
+// Respond to Events - Adding and removing event listeners
+
+function increaseTextSize(){
+    this.style.fontSize = "2em";
+}
+mainHeading.addEventListener('mouseenter', increaseTextSize);
+
+mainHeading.removeEventListener('mouseleave', increaseTextSize);
+
+document.body.addEventListener('keypress', function(){
+    console.log("removing first child");
+ document.querySelector("#contain-all").firstElementChild.remove();
+});
+

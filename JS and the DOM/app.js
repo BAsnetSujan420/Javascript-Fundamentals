@@ -31,3 +31,22 @@ const cardContainer = document.querySelector('.hero__module');
 const firstChild = cardContainer.firstElementChild;
 //cardContainer.removeChild(firstChild);
 firstChild.remove();
+
+
+// Modifying an Element's Style Attribute
+
+const communityHeading = document.querySelector("h6.text-center");
+
+communityHeading.style.backgroundColor = "gray";
+communityHeading.style.cssText = "color: orange; font-size: 2em";
+
+// add an ID attribute to the heading's sibling element
+communityHeading.nextElementSibling.setAttribute('id', 'heading-sibling');
+
+// use the newly added ID to access and style that element
+document.querySelector('#heading-sibling').style.backgroundColor = 'lightblue';
+
+//add and remove class for element
+communityHeading.classList.remove("text-center");
+
+communityHeading.classList.toggle("text-center");

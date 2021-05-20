@@ -25,3 +25,28 @@ function returnThree(){
 const res = callAndAdd(30, returnThree);
 
 console.log(res);   // 33
+
+
+// Higher Order Functions - Array Methods
+
+const favoriteFlavors = ['cookie dough', 'salted caramel', 'toffee'];
+
+favoriteFlavors.forEach(function(flavor) {
+  // debugger;
+  console.log('I enjoy ' + flavor + ' ice cream!');
+});
+
+
+const names = ['David', 'Richard', 'Veronika'];
+
+const nameLengths = names.map(function(name) {
+  return name.length;
+});
+
+const shortNames = names.filter(function(name) {
+  return name.length < 6;
+});
+
+console.log(nameLengths);  // [ 5, 7, 8 ]
+
+console.log(shortNames);   // [ 'David' ]

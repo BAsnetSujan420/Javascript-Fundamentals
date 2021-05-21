@@ -1,6 +1,6 @@
 const mammal = {
   vertebrate: true,
-  earBones: 3
+  earBones: 3,
   };
 
 const rabbit = Object.create(mammal);

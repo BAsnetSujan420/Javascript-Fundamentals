@@ -28,3 +28,17 @@ function introduce(one, two) {
 //apply() is similar to call but it can accept multiple arguments
 introduce.apply(andrew, ['Javascript', 'Python']);
 
+
+const driver = {
+  name: 'Danica',
+  displayName: function () {
+  console.log(`Driver Name: ${this.name}`);
+  }
+};
+  
+const car = {
+  name: 'Fusion'
+};
+
+// bind() returns a new function with this bound to a specific object
+driver.displayName.bind(car)();

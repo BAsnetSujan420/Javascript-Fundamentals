@@ -30,4 +30,4 @@ class Plane {
   var jamesPlane = new Plane2(4);
   jamesPlane.startEngines();
 
-  console.log(typeof Plane);
+  console.log(typeof Plane);  //function

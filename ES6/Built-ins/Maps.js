@@ -36,3 +36,8 @@ console.log(members.has('Xavier'));
 console.log(members.has('Marcus'));
 
 console.log(members.get('Evelyn'));
+
+for (const member of members) {
+    const [key, value] = member;
+    console.log(key, value);
+}

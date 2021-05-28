@@ -18,5 +18,10 @@ console.log(months.size);
 
 console.log(months.has('September'));
 
+const iterator = months.values();
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
 
 

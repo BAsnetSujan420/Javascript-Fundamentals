@@ -10,3 +10,20 @@ const orderIceCream = (flavor, cone) => console.log(`Here's your ${flavor} ice c
 
 orderIceCream('chocolate', 'waffle');
 
+
+// constructor
+function IceCream() {
+    this.scoops = 0;
+}
+
+// adds scoop to ice cream
+IceCream.prototype.addScoop = () => { // addScoop is now an arrow function
+  setTimeout(() => {
+    this.scoops++;
+    console.log('scoop added!');
+  }, 0.5);
+};
+
+const dessert = new IceCream();
+dessert.addScoop();
+

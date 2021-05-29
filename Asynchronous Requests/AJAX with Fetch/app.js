@@ -21,7 +21,16 @@ fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, 
 .catch(e => requestError(e, 'image'));
 
 function addImage(data) {
-    console.log(data);
-}
+    let htmlContent = '';
 
+    if (data && data.results && data.results[0]) {
+        const firstImage = data.results[0];
+        htmlContent = `<figure>
+            <img src="${firstImage.urls.small}" alt="${searchedForText}">
+            <figcaption>${searchedForText} by ${firstImage.user.name}</figcaption>
+        </figure>`;
+    } else {
+        htmlContent = '<div class="error-no-image">Unfortunately, no image was returned for your search.</div>'
+    }
+}
 })();

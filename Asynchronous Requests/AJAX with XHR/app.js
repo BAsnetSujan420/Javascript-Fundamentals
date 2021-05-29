@@ -20,8 +20,21 @@ imgRequest.setRequestHeader('Authorization', 'Client-ID 44dbceabc1234');
 imgRequest.send();
 
 function addImage(){
-    const data = JSON.parse( this.responseText ); // convert data from JSON to a JavaScript object
-    console.log(data);
-}
+    let htmlContent = '';
+    const data = JSON.parse(this.responseText);
+ 
+     if (data && data.results && data.results[0]) {
+         const firstImage = data.results[0];
+         htmlContent = `<figure>
+             <img src="${firstImage.urls.small}" alt="${searchedForText}">
+             <figcaption>${searchedForText} by ${firstImage.user.name}</figcaption>
+         </figure>`;
+     } else {
+         htmlContent = '<div class="error-no-image">Unfortunately, no image was returned for your search.</div>'
+     }
+ 
+     responseContainer.insertAdjacentHTML('afterbegin', htmlContent);
+ }
+
 })();
 

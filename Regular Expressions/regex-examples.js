@@ -23,3 +23,43 @@ const ex5 = 'https://facebook.com'.match(url);
 
 console.log(ex5);        // [ 'https://facebook.com', 'https://', 'facebook.com', undefined, index: 0, input: 'https://facebook.com', groups: undefined ]
 
+
+/**
+ * Password Validation
+ * force password to contain a capital letter, lowercase letter, number and minimum of 8 characters
+ *  */ 
+
+const pass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g
+
+const res1 = "1sMyPasswordOK?".search(pass);
+console.log(res1); // 0
+
+const res2 = "fireship".search(pass);
+console.log(res2);  // -1
+
+
+/**
+ * Hex Codes
+ * analyze color scheme in document matching hex value of color
+ */
+
+ const hex = /#?([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/g
+
+ const res3 = "color: #ffffff; color: #000000;".match(hex);
+ console.log(res3);  // [ '#ffffff', '#000000' ]
+
+ const res4 = "color: rgb(0,0,255); color: hsl(280, 50%, 20%);".match(hex);
+ console.log(res4);  // null
+
+
+/**
+ * Remove HTML Tags
+ * find and replace all the HTML tags
+ */
+
+ const tags = /(<script(\s|\S)*?<\/script>)|(<style(\s|\S)*?<\/style>)|(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/g
+
+ const sanitized = "<h1>Hello World</h1>".replace(tags, '');
+
+ console.log(sanitized);  // Hello World
+

@@ -16,4 +16,17 @@ matchNumber3.test(num1); // true
 matchNumber3.test(num2); // true
 matchNumber3.test(num3); // true
 
+// match 10 digits numbers with group
+const matchNumber2 = /(?<first>\d{3})[ -]?(?<second>\d{3})[ -]?(?<third>\d{4})/;
 
+const friendNum = num1.match(matchNumber2); 
+console.log(friendNum);  // groups: [Object: null prototype] { first: '123', second: '456', third: '7890'}
+
+// match 10 digits number with area and international code
+const matchNumber = /((\+1)[ -])?\(?(?<areacode>\d{3})\)?[ -]?(\d{3})[ -]?(\d{4})/;
+
+matchNumber.test(num1); // true
+matchNumber.test(num2); // true
+matchNumber.test(num3); // true
+console.log(matchNumber.test(num4)); // true
+console.log(matchNumber.test(num5)); // true

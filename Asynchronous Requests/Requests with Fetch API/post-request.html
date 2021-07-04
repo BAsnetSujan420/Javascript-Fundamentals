@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST Request with Fetch API</title>
+    <style>
+      header {
+        color: #0087de;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      main {
+        background: #0087de;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .container {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-width: 400px;
+      }
+      h1 {
+        color: #1f233e;
+        padding-top: 30px;
+        margin: 0;
+        font-weight: 200;
+      }
+
+      form input {
+        color: #fff;
+        outline: none;
+        border: solid 0.8px #1f233e;
+        background-color: inherit;
+        display: block;
+        margin-top: 40px;
+        padding: 1em;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        font-size: 1rem;
+        font-weight: 500;
+        width: 60%;
+        padding: 0.8em 0 0.8em;
+        margin-left: 50px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background: #1f233e;
+        color: #0087de;
+      }
+
+      #responseField {
+        border: 2px solid #fff;
+        margin-top: 40px;
+        width: 30%;
+        height: 150px;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h3>bytesize</h3>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Enter a URL</h1>
+        <form action="" id="form">
+          <input type="text" name="url" id="input" placeholder="enter a url" />
+          <input type="submit" value="shorten" id="shorten" />
+        </form>
+        <div id="responseField"></div>
+      </div>
+    </main>
+    <script src="ajax-post-request.js"></script>
+  </body>
+</html>
